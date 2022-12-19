@@ -1,31 +1,38 @@
-# µfox
-
+# `µfox`
 Make Firefox less visually intrusive.
 
 
-#### Features
-##### Findbar
-µfox reduces the cognitive load of using the findbar by
-
-1. Minimally styling it, eliminating buttons and using sane default options
-2. taking it away from the bottom or top of the screen and bringing it closer to the rest of the content in the browser
+### Goals 📝
+The overall goal of these styles is to eliminate some of Firefox's qualities that aren't useful to users who primarily use their keyboard to browse. The subgoals below discuss how.
 
 
-##### Toolbar
-µfox increases valuable screen real estate and minimizes visual interference by
+#### Findbar
+`Goal`: reduce the cognitive load of using the findbar by
 
-1. Making the toolbar hidden when it is not focused
-2. Making the toolbar minimally styled by
+1. taking it away from the edge of the screen and bringing it closer to the rest of the content in the browser
+2. Minimally styling it, eliminating buttons and trying to use sane default options
+
+
+#### Toolbar
+`Goal`: increase valuable screen real estate and minimize visual interference by making the toolbar
+
+1. hidden when it is not focused
+    - `Protip`: to toggle focus on the Toolbar, use `f6`. `Ctrl+l` can only focus the toolbar, not unfocus it
+2. minimally styled by
     - reducing movement, for example by eliminating borders that change color or expand
     - removing buttons which can have their features accessed by the URL bar
 
 
-#### Warnings
-µfox eliminates the tab bar completely. You **will** need an alternative. Try Tree Style Tab or Sideberry.
+### Warnings ⚠️
+`µfox` eliminates the tab bar completely. You **will** need an alternative. Try Tree Style Tab or Sideberry.
 
 
-#### Suggestions
-µfox pairs well with
+### Suggestions 💁
+For a more keyboard-driven or minimal experience, try
 
-1. Vimium
-2. Tree Style Tab
+1. [Vimium](https://github.com/philc/vimium)
+2. [Tree Style Tab](https://github.com/piroor/treestyletab)
+
+
+### Credits 🏆
+- [Firefox CSS](https://www.reddit.com/r/FirefoxCSS/)
