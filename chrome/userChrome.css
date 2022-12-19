@@ -1,0 +1,47 @@
+/*
+ * @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+ *
+ * To use userChrome:
+ *    1. Set toolkit.legacyUserProfileCustomizations.stylesheets to true
+ *       - we have this set in user.js already
+ *
+ *    2. mkdir chrome, mv userChrome.css chrome, mv chrome <ff profile>
+ **/
+
+@import "url_bar.css";
+@import "find_bar.css";
+
+:root {
+	--sidebar-width: 18em;
+	--custom-bg-color: #1C1B22;
+}
+
+/* remove title bar that was added above url bar in 106 */
+#titlebar {
+	display: none;
+}
+
+/* Hides status panel
+ *
+ * The status panel is the small box in the bottom left corner
+ * of the window that displays website connection information.
+ *
+ * source: https://stackoverflow.com/questions/37084010/how-to-hide-the-status-bar-showing-link-urls-in-firefox
+ * see second answer, from Greg M.
+ * */
+#statuspanel {
+	display: none !important;
+}
+
+/** sidebar **/
+#sidebar-box {
+	width: var(--sidebar-width) !important;
+}
+
+/* Removes header and original splitter from sidebar */
+#sidebar-header, #sidebar-box ~ #sidebar-splitter {
+	display: none;
+}
+
+/* Make items that are checked in menus highlighted */
+menuitem[checked="true"] > .menu-iconic-text {color: #ff0000 !important;}

@@ -1,0 +1,110 @@
+/* Resources:
+ *	 1. https://www.reddit.com/r/FirefoxCSS/comments/r2elve/compact_findbar/
+ * 	 2. https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/floating_findbar_on_top.css
+ * */
+
+#statuspanel-inner {
+	width: unset !important;
+}
+
+.browserContainer {
+	position: relative !important;
+}
+
+#main-window[inFullscreen] findbar{
+	margin-top: 0 !important;
+}
+
+findbar {
+	--side-padding: 10px;
+
+	-moz-box-ordinal-group: 0 !important;
+
+	background: none !important;
+	background-image: none !important;
+	border: none !important;
+	display: flex !important;
+	margin: 5em 25em 0 0 !important;
+	min-width: 20em !important;
+	position: absolute !important;
+	right: 0 !important;
+	top: 0 !important;
+	z-index: 1 !important;
+
+	/* make appearance and disappearance fast */
+	transition-property: unset !important;
+	transition-duration: unset !important;
+	transition-timing-function: unset !important;
+}
+
+.findbar-container {
+	background-color: var(--custom-bg-color) !important;
+	pointer-events: auto;
+	vertical-align: middle !important;
+}
+
+.findbar-container,
+.findbar-textbox {
+	height: 38px !important;
+}
+
+.findbar-find-status {
+	-moz-box-flex: 1;
+	-moz-box-ordinal-group: 1 !important;
+
+	background-color: var(--custom-bg-color) !important;
+}
+
+.findbar-highlight:after,
+.findbar-case-sensitive:after,
+.findbar-match-diacritics:after {
+	display: -moz-box !important;
+}
+
+.findbar-highlight:after {
+	content: "\00a0\00a0\00a0\00a0";
+}
+
+.findbar-case-sensitive:after {
+	content: "Aa" !important;
+}
+
+.findbar-match-diacritics:after {
+	content: "eê" !important;
+}
+
+.found-matches{
+	color: #ff0000 !important;
+	font-size: 13px !important;
+	margin: 0 0 0 8px !important;
+	padding-inline-end: var(--side-padding) !important;
+}
+
+.findbar-textbox,
+findbar-textbox[status="notfound"] {
+	background-color: var(--custom-bg-color) !important;
+	border: none !important;
+	color: #ffffff !important; /* text color */
+	outline: none !important;
+	padding-inline-start: var(--side-padding) !important;
+	width: 8em !important;
+}
+
+.findbar-case-sensitive > .toolbarbutton-text,
+.findbar-container checkbox.findbar-case-sensitive.tabbable,
+.findbar-container checkbox.findbar-match-diacritics.tabbable,
+.findbar-entire-word.findbar-button.tabbable,
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-find-status,
+.findbar-highlight .toolbarbutton-text,
+.findbar-highlight.findbar-button.tabbable,
+.findbar-highlight.findbar-button.tabbable,
+.findbar-match-diacritics > .toolbarbutton-text,
+.findbar-match-diacritics.findbar-button.tabbable,
+checkbox.findbar-case-sensitive tabbable,
+checkbox.findbar-entire-word.tabbable,
+checkbox.findbar-highlight.tabbable,
+findbar .close-icon {
+	display: none !important;
+}

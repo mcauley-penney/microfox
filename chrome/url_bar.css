@@ -1,0 +1,116 @@
+/* Resources:
+ *   Autohide:
+ *		 - https://www.reddit.com/r/FirefoxCSS/comments/upeqtg/autohiding_nav_bar/
+ *			 - https://pastebin.com/raw/rrN0d5nf
+ * */
+
+#nav-bar {
+	/* shorten the length of the entire nav bar here */
+	--navbar-margin: -30px;
+
+	background-color: var(--custom-bg-color) !important;
+	font-size: 11pt !important;
+
+	margin-left: calc(var(--sidebar-width) + 10px) !important;
+	margin-top: var(--navbar-margin);
+	margin-right: 45vw !important;
+	margin-bottom: 0;
+
+	/* Remove border around urlbar when focused */
+	--toolbar-field-focus-border-color: transparent;
+	opacity: 0;
+
+	transition-property: unset !important;
+	transition-duration: unset !important;
+	transition-timing-function: unset !important;
+
+	z-index: -100;
+}
+
+#navigator-toolbox:focus-within > #nav-bar,
+#navigator-toolbox:hover > #nav-bar
+{
+	margin-top: 0;
+	margin-bottom: var(--navbar-margin);
+	z-index: 100;
+	opacity: 1;
+}
+
+#urlbar-container {
+	/* change this value to make entire bar shorter in height */
+	--urlbar-container-height: 28px !important;
+
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+#urlbar {
+	background-color: var(--custom-bg-color) !important;
+	border: none !important;
+	box-shadow: none !important;
+
+	/* give area where cursor enters text an indent */
+	padding-inline-start: 2px !important;
+}
+
+/* makes URL placeholder text transparent
+ * source: https://support.mozilla.org/en-US/questions/1293159
+ * */
+#urlbar *|input::placeholder,
+*|input:focus::placeholder {
+	opacity:0 !important;
+}
+
+/* Fix URL address vertical aligment when megabar is open */
+#urlbar[breakout="true"][open="true"] {
+	--urlbar-toolbar-height: 24px !important;
+}
+
+/* Fix vertical alignment */
+#urlbar[breakout="true"]:not([open="true"]) {
+	--urlbar-height: 24px !important;
+	--urlbar-toolbar-height: 26px !important;
+}
+
+/* Remove breakout/popup/shadow when URL is focused */
+#urlbar[focused="true"] > #urlbar-background,
+#searchbar:focus-within {
+	--toolbar-field-focus-border-color: transparent;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+#urlbar-background { background-color: var(--custom-bg-color) !important;}
+
+/* remove border under nav-bar */
+/* src: https://www.reddit.com/r/FirefoxCSS/comments/wt74gm/how_to_get_rid_of_black_line_under_search_bar/ */
+#navigator-toolbox {
+	border-bottom: none !important;
+}
+
+/* removes tab bar */
+#tabbrowser-tabs { visibility: collapse !important; }
+
+/* Remove buttons and icons */
+#back-button,
+#downloads-button,
+#forward-button,
+#identity-box,
+#identity-icon,
+#page-action-buttons,
+#reload-button,
+#star-button-box,
+#stop-reload-button,
+#tracking-protection-icon-container,
+#urlbar-go-button {
+	display: none !important;
+}
+
+#nav-bar-overflow-button,
+#PanelUI-button {
+	filter: grayscale(100%) opacity(40%);
+	text-align: center;
+
+	/* make buttons smaller */
+	transform: scale(.7,.7);
+}
