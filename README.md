@@ -12,6 +12,8 @@ The overall goal of these styles is to eliminate some of Firefox's qualities tha
 1. taking it away from the edge of the screen and bringing it closer to the rest of the content in the browser
 2. Minimally styling it, eliminating buttons and trying to use sane default options
 
+![findbar](https://user-images.githubusercontent.com/59481467/208356626-edeb6131-917b-42ae-b419-702217fc32cc.gif)
+
 
 #### Toolbar
 `Goal`: increase valuable screen real estate and minimize visual interference by making the toolbar
@@ -21,6 +23,8 @@ The overall goal of these styles is to eliminate some of Firefox's qualities tha
 2. minimally styled by
     - reducing movement, for example by eliminating borders that change color or expand
     - removing buttons which can have their features accessed by the URL bar
+
+![toolbar](https://user-images.githubusercontent.com/59481467/208356699-c298a4b9-cb29-47a1-8e62-16d6dd1186cb.gif)
 
 
 ### Warnings ⚠️
